@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponse
 from .models import Items
 from .serializers import ItemsSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+def index(request):
+    return render(request,"index.html",{})
 # Create your views here.
 @api_view(['GET','POST'])
 def item_list(request):
